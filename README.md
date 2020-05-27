@@ -106,3 +106,26 @@ The supported types are character, *ASCII* (numerical representation of a charac
 
 ### Strings
 
+Strings represent words or any other group of characters.   
+We can use templates (`${}` or just `$`) to interpolate variables and strings. Ie: `val greeting = "Welcome $userName"`.   
+
+The backslash (`\`) skips special characters as it is in the `Char` type. If you want to display a dollar sign, it's necessary to use it as `\$`.    
+
+Some string methods:
+* `.length`: show the size of the string
+* `.subSequence(1, 3)`: show the characters between specific index positions   
+
+A raw string is delimited by a triple quote (`"""`) and can contain new lines and any other special characters, without escaping:
+```
+val rawString = """
+    | I can have special characters $&%#
+    | New lines
+    
+    
+    | And so on...
+"""
+```
+
+Kotlin’s strings are immutable. It never changes the memory allocated to a `String`, always creates a new one.
+So, if we have to make a lot of changes in a `String`, it's better to use the `StringBuilder` class.
+
